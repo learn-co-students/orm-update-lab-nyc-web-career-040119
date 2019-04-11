@@ -30,9 +30,9 @@ class Student
   end
 
   def update
-    sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
+    sql = "UPDATE students SET name = ?, grade = ? WHERE id = #{self.id}"
     # update name and grade based on id
-    DB[:conn].execute(sql, self.name, self.grade, self.id)
+    DB[:conn].execute(sql, self.name, self.grade)
   end
 
   # CLASS METHODS
